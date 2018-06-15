@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.utils import timezone
 from .models import Post
+from .forms import PostForm
 # Create your views here.
 
 def index(request):
@@ -11,4 +12,8 @@ def index(request):
 def detail(request, post_id):
     post = get_object_or_404(Post,id=post_id)
     return render(request,'blog/post_detail.html',{'post': post})
+
+def post_new(request):
+    form = PostForm()
+    return render(request, 'blog/post_edit.html', {'form': form})
 
