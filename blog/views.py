@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.utils import timezone
 from .models import Post
@@ -9,5 +9,6 @@ def index(request):
     return render(request,'blog/post_list.html',{'posts':all_post})
 
 def detail(request, post_id):
-    return HttpResponse("You're looking at detail page for post id  %s." % post_id)
+    post = get_object_or_404(Post,id=post_id)
+    return render(request,'blog/post_detail.html',{'post': post})
 
