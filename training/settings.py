@@ -25,7 +25,7 @@ SECRET_KEY = 'vgmpn1-qe@=566ingh6-wn6&_-&)^!_#f3km20(m*-o&^xxq9v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['amrit-blog.herokuapp.com']
 
 
 # Application definition
